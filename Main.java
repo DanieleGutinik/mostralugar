@@ -4,30 +4,35 @@
  */
 package projeto_lugares;
 
-import java.awt.Desktop;
 import java.io.IOException;
-import java.net.URI;
 import java.net.URISyntaxException;
 
 /**
  *
- * @author Daniele_38
+ * @author Daniele_Gutinik
+ * Projeto de Estudo  Classe, Objeto, Lista
+ * Metódo, retorno, lista. Getter e Setter
+ * EncapsulamentoI
  */
 public class Main{
 	
 	public static void main(String[] args) throws URISyntaxException, IOException{
-		String lugar = "Praça"; // variavel
-		String escola = "Escolas"; // variavel
-		Double avaliacao = 5d/2d; // Variavel Double 5d / 2d
 		
-		System.out.println(lugar);
-		System.out.println(avaliacao);
+		Lugar objetoLugar = new Lugar("Parque do Atleta");		
 	
-		mostrarLugarNoMapa(lugar);
-		mostrarLugarNoMapa(escola);
-	}		
-
-	private static void mostrarLugarNoMapa(String lugar) throws URISyntaxException, IOException {
-		Desktop.getDesktop().browse(new URI("https://www.google.com/maps/search/?api=1&query="+lugar));
+		
+		objetoLugar.addAvaliacao(5);
+		objetoLugar.addAvaliacao(4);
+		objetoLugar.addAvaliacao(2);
+		objetoLugar.mostraNoMapa();
+		
+		Integer total = objetoLugar.totalDeAvaliacoes();
+		
+		System.out.print(total);
+		
+		
+		
 	}
+	
+	
 }
